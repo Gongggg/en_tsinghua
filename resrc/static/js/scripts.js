@@ -6,6 +6,13 @@ var news_cards = new Vue({
         // TODO: if there is more data, please use vue-infinite-scroll.
         threed_vision_cards: [
             {
+                title: 'View-Aware Geometry-Structure Joint Learning for Single-View 3D Shape Reconstruction',
+                img: 'static/img/xuancheng_vgs.png',
+                content: 'This paper presents a view-aware joint geometry and structure learning method (VGSNet) for single view 3D shape reconstruction.',  
+                inscription: 'Posted on 05/14/2021 by Xuancheng Zhang',
+                src: 'detail/research_vgsnet.html'
+            },
+            {
                 title: 'Attention-based Multi-modal Fusion Network',
                 img: 'static/img/siqi.jpg',
                 content: 'This paper presents an end-to-end 3D convolutional network named attention-based multi-modal fusion network (AMFNet) for the semantic scene completion (SSC) task of inferring the occupancy and semantic labels of a volumetric 3D scene from single-view RGB-D images.',

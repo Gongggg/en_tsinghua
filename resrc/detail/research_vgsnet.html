@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>View-Aware Geometry-Structure Joint Learning for Single-View 3D Shape Reconstruction</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../static/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/vendor/glyphicons/glyphicons.css">
+    <link rel="stylesheet" href="../../static/css/vendor/glyphicons/filetypes.css">
+    <link rel="stylesheet" href="../../static/css/vendor/glyphicons/social.css">
+    <link href="../../../fonts.googleapis.com/css-family=Open+Sans-400,700,600.css" rel='stylesheet' type='text/css'>
+    <link href="../../static/trans.css" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap-markdown.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/vendor/layerslider/layerslider.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/styles-cleanred.css" id="grove-styles">
+    <link rel="stylesheet" href="../../../cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/nlp.css" id="nlp-styles">
+    <script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../static/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="../../static/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+    <script src="../../static/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+    <script src="../../static/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js"
+        type="text/javascript"></script>
+    <script src="../../static/js/markdown.js" type="text/javascript"></script>
+    <script src="../../static/js/to-markdown.js" type="text/javascript"></script>
+    <script src="../../static/js/bootstrap-markdown.js" type="text/javascript"></script>
+    <script src="../../static/js/grove-slider.js" type="text/javascript"></script>
+    <script src="../../../cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script
+        src="../../../cdn.datatables.net/plug-ins/1.10.7/features/searchHighlight/dataTables.searchHighlight.min.js"></script>
+    <script src="../../../bartaz.github.io/sandbox.js/jquery.highlight.js"></script>
+    <link href="../../../cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <link href="static/css/c5e0117592e540848259ae6882d93f52.css" rel="stylesheet" />
+    <script src="static/js/d46d827d0f604446b58cc8d38bdbd84e.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default grove-navbar navbar-fixed-top" id="imoonbignav">
+            <div class="container" id="imoonmidnav">
+                <div class="navbar-header">
+                    <a href="#" class="grove-toggle collapsed" data-toggle="collapse" data-target=".grove-nav">
+                        <i class="glyphicons show_lines"></i>
+                    </a>
+                    <img class="navbar-brand navbar-left hidden-xs" src="../../static/img/logos/nlp-logo-small.png"
+                        alt="" id="imoonlogo">
+                    <a class="navbar-brand navbar-left" href="../index.htm">
+                        <h3 class="hidden-xs" id="imoontitle" style="font-weight: 600;margin-top: 15px">iMoon-Lab<p
+                                style="margin-top: 5px">
+                                iMoon: Intelligent
+                                Media and Cognition Lab</p>
+                        </h3>
+                        <h3 class="hidden-sm hidden-md hidden-lg hidden-xl" style="color: white">iMoon-Lab</h3>
+                    </a>
+                </div>
+
+                <div class="navbar-collapse grove-nav collapse" style="position: relative">
+                    <ul class="nav navbar-nav" id="imoonnav">
+
+                        <div style="position:absolute;top:5px;left:10px;border:0px solid rgb(255, 255, 255);">
+                            <a href="../../index.htm">
+                                <div style="width: 400px;height:65px"></div>
+                            </a>
+                        </div>
+                        <!-- <div id="language">
+                            <a id='drump' href="#"><b>中 / </b></a><a id='drump'
+                                href="../../../en/resrc/index.htm"><b>En</b></a>
+                        </div> -->
+                        <li style="margin-top: 1px;">
+                            <a href="../../index.htm">Home</a>
+                        </li>
+                        <li style="margin-top: 1px;">
+                            <a href="../../people/index.htm">People</a>
+                        </li>
+                        <li style="margin-top: 1px;">
+                            <a href="../../resrc/index.htm">Research</a>
+                        </li>
+                        <li style="margin-top: 1px;">
+                            <a href="../../pubs/index.htm">Publications</a>
+                        </li>
+                        <li style="margin-top: 1px;">
+                            <a href="../../blog/index.htm">News</a>
+                        </li>
+                        <li style="margin-top: 1px;">
+                            <a href="#">Life</a>
+                        </li>
+                        <li class="dropdown" style="margin-top: 1px;">
+                            <a href="#">More</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../../more/index.htm">MICCAI19 Tutorial</a></li>
+                                <li><a href="#">MICCAI19 Challenge</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container body-content" style="margin-top:90px;">
+
+        <body>
+            <h1 align="center" style="font-size:40px;"><b>View-Aware Geometry-Structure Joint Learning <br>for Single-View 3D Shape Reconstruction
+            </h1>
+            <div class="row">
+                <br>
+                <p align="center" style="font-size:20px;">
+                    Xuancheng Zhang
+                    <!-- ,
+                    Changqing Zou,
+                    Yipeng Li,
+                    Xibin Zhao,
+                    and
+                    <a href="http://gaoyue.org/cn/people/gaoyue_index.html">Yue Gao</a> -->
+                </p>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="word-wrap:break-word;hyphens:manual">
+                    <!-- <h2><b>Abstract</b></h2> -->
+                    <p style="font-size:20px;" wrap="soft">Reconstructing a 3D shape from a single-view image using deep learning has become increasingly popular recently.
+                        Most existing methods only focus on reconstructing the 3D shape geometry based on image constraints.
+                        The lack of explicit modeling of structure relations among shape parts yields low-quality reconstruction results for structure-rich man-made shapes.
+                        In addition, conventional 2D-3D joint embedding architecture for image-based 3D shape reconstruction often omits the specific view information from the given image, which may lead to degraded geometry and structure reconstruction.
+                        We address these problems by introducing VGSNet, an encoder-decoder architecture for view-aware joint geometry and structure learning.
+                        The key idea is to jointly learn a multimodal feature representation of 2D image, 3D shape geometry and structure so that both geometry and structure details can be reconstructed from a single-view image.
+                        To this end, we explicitly represent 3D shape structures as part relations and employ image supervision to guide the geometry and structure reconstruction.
+                        Trained with pairs of view-aligned images and 3D shapes, the VGSNet implicitly encodes the view-aware shape information in the latent feature space.
+                        Qualitative and quantitative comparisons with the state-of-the-art baseline methods as well as ablation studies demonstrate the effectiveness of the VGSNet for structure-aware single-view 3D shape reconstruction.
+                    </p>
+                    <p style="text-align:center;"><img style="width: 100%;" src="research_vgsnet/pipeline.png" alt="xxxx"
+                            class="center"></p>
+                    <p style="font-size:15px; text-align:center">Figure 1. The multimodal joint VAE branch for VGSNet. The parts (highlighted in red) from pairs of view-aligned image and 3D shape are fed to the jointencoder to compute a view-aware VGS vector. The joint decoder transforms VGS vector back to part images and 3D shapes recursively. The shape structureof part relations is explicitly modeled by the hierarchical shape graph. The final output shape is a union of the reconstructed part point clouds.</p>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <br>
+
+
+            <br>
+
+            <!-- <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h2><b> Method </b></h2>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+
+                    <p style="font-size:20px" wrap="hard">
+                        The proposed AMFNet, as illustrated in Figure 1, mainly contains three sequential modules: a 2D
+                        segmentation network,
+                        a 2D-3D projection layer, and a two-branch 3D volume network. This network takes single-view
+                        RGB-D images
+                        as input and outputs occupancy and semantic labels for all voxels in the scene. The whole
+                        network can be trained
+                        in an end-to-end manner. We next introduce each module in the sequence of the flow of data
+                        processing. <br><br>
+
+                        The 2D segmentation network extracts 2D geometry features and performs 2D semantic segment-ation
+                        from the input RGB-D images.
+                        <br>
+                        The 2D-3D projection layer projects every feature tensor and semantic label into the 3D volume
+                        at the location with the same depth value.<br>
+                        The 3D volume network, which takes the output of the 2D-3D projection layer as input, contains
+                        two branches: one
+                        for 3D guidance information and the other for 3D semantic completion.
+                    </p>
+
+
+                    <p style="text-align:center;"><img style="width: 60%;" src="research_AMFNet/RAB.png" alt="xxxx"
+                            class="center"></p>
+                    <p style="font-size:15px; text-align:center;">Figure 2. Illustration of the proposed residual
+                        attention block
+                        (RAB). RAB has a structure similar to the DDR block but with both channel-wise and spatial-wise
+                        attention injected.
+                    </p>
+                    <br>
+
+                    <p style="font-size:20px" wrap="hard">
+                        The 3D-guidance branch is used to provide the guidance information for the branch of 3D semantic
+                        completion, which is boosted from an initial 3D semantic volumetric scene where visible voxels
+                        have initial
+                        semantic labels. The initial 3D semantic volume is encoded by a one-hot encoder to achieve an
+                        ROI region (3D
+                        bounding box) for a specific category from the initial 3D semantic volume. The one-hot encoding
+                        introduces spatial
+                        boundary constraints into the network for each category, which improves the prediction of 3D
+                        semantic volume. <br><br>
+
+                        The 3D-semantic completion branch, which takes the initial 3D feature volume as input, is mainly
+                        used to infer the voxel occupancy
+                        of the 3D scene. The RAB block used in the 3D-completion branch is shown in Figure 2.
+
+                    </p>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div> -->
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="word-wrap:break-word;hyphens:manual">
+                    <h2><b>Results</b></h2>
+
+                    <p style="text-align:center;"><img style="width: 100%;" src="research_vgsnet/table.png" alt="xxxx"
+                            class="center"></p>
+                    <br>
+                    <p style="font-size:20px;" wrap="soft">
+                        Table 1 shows the quantitative comparisons of CD and F-score on the PartNet-color testing set, while Table 2 shows the similar comparisons on the PartNet-texture dataset.
+                        The VGSNet outperforms other methods in all three categories for both PartNet-color and PartNet-texture, showing the effectiveness of our joint multimodal learning framework on improving the geometry reconstruction accuracy. 
+                        Since the PartNet-texture contains more challenging images of textured shapes and random views, the results in Table 2 also validate the generalizability of VGSNet.
+                    </p>
+
+                    <br>
+
+                    <p style="text-align:center;"><img style="width: 100%;" src="research_vgsnet/color-qualitative.png" alt="xxxx"
+                            class="center"></p>
+                    <p style="font-size:15px; text-align:center">
+                        Figure 2. Qualitative comparison on PartNet-color. The VGSNet significantly outperforms other methods by producing more fine-grained 3D geometry and structures, while the baselines may fail dramatically, such as having large missing regions and holes.</p>
+                    <br>
+                    <p style="text-align:center;"><img style="width: 100%;" src="research_vgsnet/texture-qualitative.png" alt="xxxx"
+                        class="center"></p>
+                    <p style="font-size:15px; text-align:center">
+                        Figure 3. Qualitative comparison on PartNet-texture. The baseline methods show improved performance comparing to the results on PartNet-color in Figure 2. Meanwhile, the VGSNet produces the best results with more geometry and structure details (e.g., the bars in chair’s back) on thischallenging dataset, showing the generalization ability of the network.</p>
+                    <br>
+                    <p style="text-align:center;"><img style="width: 50%;" src="research_vgsnet/structurenet-qualitative.png" alt="xxxx"
+                        class="center"></p>
+                    <p style="font-size:15px; text-align:center">
+                        Figure 4. Qualitative comparison with StructureNet on PartNet-texture. Thejoint  2D-3D  embedding  is  applied  to  StructureNet  for  single-view  re-construction. Note that although StructureNet can generate results withrelatively better symmetry and part adjacency, it may predict inaccurategeometry (first row) or incorrect structure from the image, e.g., wrongnumber of bars in the chair’s back (second row) or even wrong shapefor the chair (third row). In comparison, VGSNet can produce satisfiedreconstruction in both geometry and structure.</p>
+                    <br>
+                    <p style="font-size:20px;" wrap="soft">
+                        Figure 2 and 3 show the qualitative comparisons on the PartNet-color and PartNet-texture, respectively.
+                        The baseline methods may fail dramatically, such as producing results with large missing regions and holes. DISN achieves the best performance among the baselines, but it still fails for some structure reconstruction.
+                        
+                        For VGSNet, both the geometry and structure details are recovered from input images successfully since it learns shape structures explicitly and the view-aware stategy we used learns a one-to-one mapping between the image and 3D shape.
+                        <br>
+                        Figure 4 shows that StructureNet produces incorrect structures such as wrong number of bars (8 in predicted vs. 4 in GT) in the chair’s back and completely wrong shape structure for the last chair. The reason is that using the joint 2D-3D embedding for 3D reconstruction is actually more similar to aretrieval process than doing the reconstruction.
+                        For VGSNet, the reconstruction is performed usingthe multimodal feature with the image feature aggregated. Therefore, the VGSNet can produce better geometry and structure reconstruction based on the input image.
+                    </p>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="word-wrap:break-word;hyphens:manual">
+                    <h2><b>Data and code</b></h2>
+                    <p style="font-size:20px;" wrap="soft">
+                        Coming soon.
+                    </p>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <br>
+
+            <!--
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h2><b> Citation </b></h2>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+
+                    <br>
+                    <br>
+                    <p style="font-size=40px">
+                        <a class="btn btn-default" href="#"> <b> Paper &raquo;</b></a>
+                        <a class="btn btn-default" href="#"> <b> Code &raquo;</b></a>
+                    </p>
+                </div>
+
+
+                <div class="col-md-1"></div>
+            </div> -->
+
+
+
+
+        </body>
+
+
+
+        <hr />
+        <footer style="background-color: #ffffff;">
+                <p>&copy; 2020 - iMoon: Intelligent Media and Cognition Lab - Tsinghua</p>
+        </footer>
+    </div>
+    <script src="static/js/77c25eff67b24c0aa003ead7859d1511.js"></script>
+
+    <script src="static/js/1a59a27fb4484e89ab0510a5871211bd.js"></script>
+
+    <script src="static/js/jquery-ui.min.js"></script>
+
+    <link href="static/css/jquery-ui.min.css" rel="stylesheet" />
+
+    <script src="static/js/shortcut.js"></script>
+
+    <script src="static/js/suggest.js"></script>
+
+
+
+
+</body>
+
+</html>
