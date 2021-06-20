@@ -6,7 +6,14 @@ var news_cards = new Vue({
         // TODO: if there is more data, please use vue-infinite-scroll.
         threed_vision_cards: [
             {
-                title: 'View-Aware Geometry-Structure Single-View 3D Reconstruction',
+                title: 'View-Guided Point Cloud Completion',
+                img: 'static/img/xuancheng_vipc.png',
+                content: 'This paper presents a view-guided point cloud completion method (ViPC) leverage the image guidance in point cloud completion task.',  
+                inscription: 'Posted on 06/18/2021 by Xuancheng Zhang',
+                src: 'detail/research_vipc.html'
+            },
+            {
+                title: 'View-Aware Geometry-Structure Joint Learning for Single-View 3D Shape Reconstruction',
                 img: 'static/img/xuancheng_vgs.png',
                 content: 'This paper presents a view-aware joint geometry and structure learning method (VGSNet) for single view 3D shape reconstruction.',  
                 inscription: 'Posted on 05/14/2021 by Xuancheng Zhang',
